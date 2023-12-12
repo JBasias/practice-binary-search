@@ -1,10 +1,36 @@
-function linearSearch (arr, target) {
+function linearSearch (A, T) {
+
+  for(let i=0; i<A.length; i++)
+  {
+    if(A[i] === T) return i;
+  }
+
+  return -1;
 
   // Can you solve this in one line?
 
 };
 
-function binarySearch(arr, target) {
+function binarySearch(A, T) {
+
+
+  let b=0, e=A.length-1, m;
+
+  while(b<=e)
+  {
+     m= Math.floor((b+e)/2);
+
+     if(A[m]>T) e = m-1;
+     else if(A[m]<T) b=m+1;
+     else return m;
+
+  }
+
+  //if(A[m] === T) return m;
+
+  return -1;
+
+
 
   // Set integers pointing to the high and low range of possible indices
 
